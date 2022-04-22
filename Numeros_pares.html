@@ -1,0 +1,52 @@
+<meta charset="UTF-8">
+
+<h1>PROGRAMA NÚMEROS PARES</h1>
+
+<script>
+
+    //Usando la instrucción while, imprime todos los números pares del 1 al 100 y al final 
+    //imprime la palabra "FIN".
+
+
+    //Primero crearemos nuestras funciones ya conocidas.
+    function saltoLinea() {
+        document.write("<br><br><br>");
+    }
+
+    function imprimir(frase){
+        document.write(frase);
+        saltoLinea();
+    }
+    //Crearemos una variable llamada contador y su valor sera 2 ya que el ejercicio
+    //nos pide numeros pares.
+
+    var contador = 2;
+
+    //Crearemos la instruccion while con la variable contador, recordar que
+    //es importante condicionarlo a una cantidad exacta de acciones para
+    //no generar errores en el programa y despues todo esto lo mandaremos a imprimir
+
+    imprimir("<big>WHILE</big>");
+
+    while (contador <=100) {
+        imprimir(contador)
+        contador = contador + 2
+        
+    }  
+    
+    //El ejercicio no sno pide usar la interacion "for" pero la usaremos con fines 
+    //de practica, de igual manera debemos limitar el numero de veces que ejecutara
+    //su tarea.
+
+    imprimir("<big>FOR</big>");
+    for (var contador = 2; contador <=100; contador = contador + 2){
+        imprimir(contador );
+    }
+
+    imprimir("<big>FIN</big>")
+
+    //Nota: Usamos la etiquete <big> para que la intruccion de mostrar el texto while
+    //for y fin sobresalgan a la hora de ejecutar el programa.
+    //Nota 2: Debemos sumar al contador cada que mande la tarea 2 digitos dado que asi
+    //nos lo pide el ejercicio es por eso que sale "contador = contador + 2"
+</script>

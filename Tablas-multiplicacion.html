@@ -1,0 +1,46 @@
+<meta charset="UTF-8">
+
+<H1>PROGRAMA - CALCULAR TABLA DE MULTIPLICAR</H1>
+<Script></Script>
+
+<script>
+    
+    //Las iteraciones son muy importantes para no repetir mucho el codigo
+
+    //Haremos un programa donde se intere la tabla del 5
+    function saltarlinea(){
+        document.write("<br><br><br>");
+    }
+
+    function imprimir(frase){
+        document.write(frase);
+        saltarlinea();
+    }
+
+   var multiplicador = 1
+ //En este while nos va a ahorrar tiempo y espacio dado que
+ //automaticamente realizara la tarea de hacer la tabla de multiplicar
+
+    imprimir("WHILE");
+    while (multiplicador <=10){
+       imprimir(5 * multiplicador);
+       multiplicador = multiplicador + 1;
+
+       //Para reemplazar multiplicador = multiplicador + 1 se le puede 
+       //agregar a nuestra variable multiplicador el signo de suma repetido
+       //multiplicador++;
+   }
+
+   //Existe otro loop que hace la misma funcion que while, este se llama FOR
+   
+   imprimir("FOR");
+
+   for (var multiplicador = 1;multiplicador <= 10;multiplicador = multiplicador + 1){
+       imprimir(5 * multiplicador);
+   }
+
+//Nota: Tener mucho cuidado y revisar a detalle el codigo, dado que los loops
+//pueden ocasionar problemas en nuestro equipo, por eso revisaremos si le dimos
+//la señal de que momento parar, en el ejercicio usamos "multiplicador <=10"
+
+</script>

@@ -1,0 +1,73 @@
+<meta charset="UTF-8">
+
+<h1>
+    JUEGO ADIVINANZA DE NÚMERO
+    </h1>
+
+    <script>
+    
+   //Haremos un pequeño juego sencillo para practicar nuestros conocimientos
+
+
+        function saltarlinea(){
+            document.write("<br><br><br>");
+        }
+
+        function imprimir(frase){
+            document.write(frase);
+            saltarlinea();
+        }
+
+        //Para usar numeros aleatorios en nuestro programa se usara el comando
+        //Math.random() y para limitar su uso a una cantidad de numeros se escribe el numero 
+        //maximo que deseamos que llegue.
+
+        //Math.random() *10
+
+        //al solo usar la funcion Math.random notaremos que nos arrojara numeros con punto decimal
+        //para evitar esto y nos de numeros enteros se usa la funcion
+        //Math.round(Math.random()*10)
+    
+        var numeroPensado = Math.round(Math.random()*10);
+        var intentos = 3;
+        
+        //En la interacion siempre debe de haber una variable llamada "contador"
+        var contador = 1;
+
+        //Con while lo que haremos es limitar el numero de oportunidades que nos 
+        //permitira adivinar nuestro juego
+        while (contador <= intentos) {
+            var numeroLanzado = parseInt(prompt("Ingrese un número entre 0-10"));
+         
+         //break es un comando que lo que hace es cortar el while
+
+            if (numeroPensado == numeroLanzado) {
+                alert("Usted acertó, en el intento" + contador + "el número pensado era " + numeroPensado);
+                break;
+            }
+
+         //Usamos else que significa sino, ya no necesitamos validar la instruccion directamente decimos
+         //que nos mande las lineas de texto que ingresamos, else se usa si solo hay dos condiciones.
+            else{
+         //En javaScript la manera de decir que un numero es diferente se usa las teclas !=
+         //Recordemos que el signo + repetido dos veces significa + 1
+            alert("Usted erró");
+            }
+            contador++;
+        }
+        
+         //Para que la pagina web nos mande un mensaje de texto con los datos que definimos
+         //debemos crear otro if y otro else con los parametro que deseamos.
+        if (numeroPensado == numeroLanzado) {
+                imprimir("Usted acertó, en el intento" + contador + "el número pensado era " + numeroPensado);
+            
+            }
+
+        else{
+            imprimir("Usted erró, el número pensado era " + numeroPensado);
+
+
+        }
+
+        imprimir("FIN");
+</script>

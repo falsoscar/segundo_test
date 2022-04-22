@@ -1,0 +1,35 @@
+<meta charset="UTF-8">
+
+<h1>INVITADOS A LA FIESTA</h1>
+
+<script>
+ //Haz un programa que calcule los invitados en total
+
+    //primero creamos nuestras funciones saltoLinea e imprimir.
+
+    function saltarlinea(){
+        document.write("<br><br>");
+    }
+
+    function imprimir(frase){
+        document.write(frase);
+        saltarlinea
+    }
+
+    //Creamos nuestras variables con un prompt, recordando que prompt nos 
+    //retorna un valor String, debemos agregar una variable parseInt para
+    //que el texto lo regrese como numero.
+    
+    var invitados = parseInt(prompt("Ingrese núnero de invitados comunes: "));
+    var vip = parseInt(prompt("Ingrese número de invitados vip: "));
+
+    //Creamos la variable totalInv que tendra la operacion para obtener el total
+    //de invitados.
+
+    var totalInv = invitados + vip;
+
+    //Por ultimo mandamos a imprimir el resultado.
+
+    imprimir("El total de invitados es de: " + totalInv);
+
+</script>

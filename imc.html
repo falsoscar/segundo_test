@@ -1,0 +1,60 @@
+<meta charset="UTF-8">
+
+
+    <h1>
+    Calculo del Indice de Masa Corporal
+    </h1>
+
+    <script>
+    
+    //le daremos un poco de inteligencia a nuestro programa, en funcion del imc 
+    //y de las condicionantes if, decir cual es el resultado del peso y altura de la persona.
+
+
+    function saltarlinea(){
+        document.write("<br><br><br>");
+    }
+
+    function imprimir(frase){
+        document.write(frase);
+        saltarlinea();
+    }
+
+    function calcularImc(peso,altura){
+        return (Math.round(peso / (altura * altura)));
+    }
+    
+     var nombre = prompt("Informe su nombre");
+     var pesoInformado = prompt(nombre + ", informe su peso en kg");
+     var alturaInformada = prompt(nombre + ", informe su altura en metros");
+
+    var imcCalculado = calcularImc(pesoInformado, alturaInformada);
+
+    imprimir(nombre + ", su imc calculado es: " + imcCalculado);
+
+
+    //Si queremos poner una condicionante doble se puede usar varias condicionantes
+    //en la misma condicionante.
+    
+    if (imcCalculado <18.5){
+        imprimir("IMC abajo de lo recomendado");
+    }  
+
+    
+    if (imcCalculado >=18.5){
+        if (imcCalculado <25){
+        imprimir("IMC recomendado");
+        } 
+    }
+
+    
+    if (imcCalculado >=25){
+        if (imcCalculado <30){
+        imprimir("IMC considerado como sobrepeso");
+        } 
+    }
+    if (imcCalculado >=30){
+        imprimir("IMC considerado como obesidad");
+    } 
+</script>
+

@@ -1,0 +1,40 @@
+<meta charset="UTF-8">
+
+<H1>PROGRAMA - CALCULAR PROMEDIO DE EDADES DE UNA FAMILIA</H1>
+
+<script>
+    
+    //Las iteraciones son muy importantes para no repetir mucho el codigo
+
+    //Haremos un programa que calcule el promedio de edad de una familia
+    function saltarlinea(){
+        document.write("<br><br><br>");
+    }
+
+    function imprimir(frase){
+        document.write(frase);
+        saltarlinea();
+    }
+
+     //Haremos un programa en el cual le preguntemos de cuantas personas desea
+     //calcular la edad.
+
+       var numeroMiembros = parseInt(prompt("Ingrese la cantidad de miembros que tiene en su familia"))
+       var contador = 1;
+       var totalEdades = 0
+       
+       
+       while (contador <=numeroMiembros) {
+           
+           
+            edad = parseInt(prompt("Ingrese la edad del familiar"))
+            totalEdades = totalEdades + edad;
+            contador++;
+        }
+
+        var mediaEdades = totalEdades / numeroMiembros
+        
+        imprimir("El total de edad es de " + totalEdades);
+        imprimir("El promedio de edad es de " + mediaEdades);
+        imprimir("fin")
+</script>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /*Armando tuvo la idea de crear un programa 
+        para crear recetas. En él, hay una lista en 
+        la que el usuario puede agregar ingredientes. 
+        Observemos:
+
+          <meta charset="UTF-8">
+
+          <h1>Recetas de Armando</h1>
+
+        <script>
+
+          var ingredientes = [];
+          var cantidad = parseInt(prompt("¿Cuántos ingredientes vas a añadir?"));
+          var contador = 1;
+
+         while( contador <= cantidad) {
+          var ingrediente = prompt("Informe el ingrediente " + contador);
+          ingredientes.push(ingrediente);
+          contador++;
+          
+         }
+          console.log(ingredientes);
+
+            Al probar el código, descubrimos que funciona.
+            El problema es que podemos agregar ingredientes 
+            repetidos a una lista de recetas. Cambia el código 
+            para que no se puedan agregar los ingredientes repetidos.
+         */
+          
+         /*Primero creamos nuestro arreglo ingredientes
+          y dado que no sabemos cuantos ingredientes
+          se usaran, no le agregaremos elementos.
+          
+          agregamos la variable cantidad con un prompt 
+          que nos pregunte cuantos ingredientes usaremos
+          recordar que al ingresar un numero queremos que 
+          el codigo lo maneje como tal
+          */ 
+         var ingredientes = [];
+         var cantidad = parseInt(prompt("¿Cuántos ingredientes vas a añadir?"));
+         var contador = 1;
+         
+         /*
+         Crearemos varios loops para evitar que se repitan 
+         los ingredientes, recordar que un loop debe
+         tener una variable llamada contador y
+         debe contar con un break para poder cortar el codigo
+         cuando le demos la orden */ 
+         while( contador <= cantidad) {
+            var ingrediente = prompt("Informe el ingrediente " + contador);
+            var encontrado = false; //valor tipo boolean
+
+            for(var posicion =0; posicion <ingredientes.length; posicion++){
+
+                if (ingrediente == ingredientes[posicion]){
+                    encontrado = true;
+                    alert("ingrediente repetido" + ingrediente);
+                    break;
+                }
+            }
+
+                if (encontrado == false){
+                    ingredientes.push(ingrediente);
+                    contador++;
+                }
+        }
+         
+        document.write("<big>FIN</big>")
+
+        console.log(ingredientes);
+
+    </script>
+
+
+</body>
+</html>

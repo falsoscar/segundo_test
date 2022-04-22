@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Número Secreto</title>
+</head>
+<body>
+
+    <input type="text">
+    <button>Verifique su número</button>
+
+    <script>
+        /*var secretos = [3,5,7,9]; // variable tipo array
+
+        /*Si necesitamos que los numeros de nuestro array sean
+        aleatorios e incluso que sea un parametro la cantidad
+        de elementos que esta tenga. Existe una funcion push
+        que ingresa los valores
+
+        var secretos = [];
+        secretos.push(3);
+        secretos.push(5);
+        secretos.purs(7)
+        */
+
+        /*Aqui estamos llamando a sortearNumeros y le estamos 
+        pasando 4, entoncer creara una variable array vacia
+        vacia, definimos el contador, va a hacer la interacion 
+        de 1 a 4 veces, definimos nuestro numero aleatorio 
+        lo llamaremos a la funcion aleatorio e ingresamos con 
+        la funcion push que es el numero aleatorio y hacemos 
+        nuestro contador++, nos retornara secretos. */
+
+        function aleatorio (){
+            return Math.round(Math.random()*10);
+        }
+
+        function sorteoNumeros(cantidad){
+            var secretos = [];
+            var contador = 1;
+
+
+            /* el contador debe ir dentro de el for para que no
+            haya problemas con el codigo*/
+            while(contador<=cantidad){
+                var numeroAleatorio = aleatorio();
+                console.log(numeroAleatorio);
+                var encontrado = false;
+                 /* dado que no queremos que nuestro codigo tome
+                 en cuenta al numero cero, debemos hacer un if
+                 para condicionar la instruccion*/
+
+                if(numeroAleatorio != 0){//condicion para que no tome al valor cero
+                for(var posicion = 0; posicion < secretos.length; posicion++){
+
+                        if(numeroAleatorio == secretos[posicion]){
+                            encontrado = true;
+                            break;
+                        }
+                    }
+
+                        if (encontrado == false){
+                            secretos.push(numeroAleatorio);
+                            contador++;
+                        }
+                    }
+                
+                    }
+                
+                return secretos
+            }
+                 
+
+        
+
+        var secretos = sorteoNumeros(4);
+
+        /*se usa el comando console.log para mirar en la consola 
+        de desarrollador los valores que tenemos en las variable, el loop
+        interno dentro de nuestro while se usa para no repetir numeros
+        aleatorios*/
+
+        console.log(secretos)
+        /*
+            querySelector = "trae" todo el objeto 
+            del HTML, en este caso el input, para
+            manipularlo con JavaScript
+        */
+        var input = document.querySelector("input"); // guardamos el input en la variable input (var input)
+        input.focus();  // le decimos a input que tenga el focus (el cursor dentro de él)
+
+        /*
+            querySelector = "trae" todo el objeto 
+            del HTML, en este caso el button, para
+            manipularlo con JavaScript
+        */
+        var button = document.querySelector("button"); //guardamos el button en la variable button (var button)
+
+        /*
+            Inicio de la función Verificar
+        */
+        function Verificar(){
+
+            var encontrado = false; // variable booleana
+            /*
+                Inicio del ciclo for
+            */
+
+             /* Se usa en el for la opcione de .lenght para que al 
+             momento de agregar un arreglo, no tengamos que cambiar
+             la cantidad de datos con los que cuenta el arreglo*/
+            for (var posicion = 0; posicion < secretos.length; posicion++){
+                if (parseInt(input.value) == secretos[posicion]){ //acá comparo uno con otro
+                    alert("Usted acertó");
+                    encontrado = true;
+                    break;
+                }
+            }   // FIN del ciclo for
+
+            if (encontrado == false){
+                alert("Usted erró");
+            }
+
+            limpiar(); // llamar a la función limpiar
+
+            } // FIN de la función Verificar
+
+
+        /*
+            cuando haga click que me llame a VERIFICAR
+            verificar va sin () para que NO lo ejecute
+            de entrada, sino al momento de hacer click
+        */
+        button.onclick = Verificar; 
+
+
+        /*
+                Función Limpiar
+                Esta es otra forma de crear funciones.
+                Estas funciones se conocen como funciones de flecha.
+        */
+        const limpiar = () => {
+                encontrado = false; // regresa el valor a false
+                input.value = "";   // input queda limpio (vacío) ""
+                input.focus();      // mueve el cursor a input.
+
+        }
+    
+    </script>
+
+
+</body>
+</html>

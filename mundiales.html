@@ -1,0 +1,39 @@
+<meta charset="UTF-8">
+
+
+<h1>
+    Mundiales de la FIFA
+    </h1>
+
+    <script>
+    
+        //Las iteraciones son muy importantes para no repetir mucho el codigo
+        function saltarlinea(){
+            document.write("<br><br><br>");
+        }
+
+        function imprimir(frase){
+            document.write(frase);
+            saltarlinea();
+        }
+
+       var anhoMundial = 1930;
+       var limite = parseInt(prompt("Ingrese el año limite para calcular"))
+       
+       //En programacion existen los lops " que es repetir una linea de
+       //mientras sea verdadero" y se llama while. Observemos el ejemplo
+
+       while (anhoMundial <=limite) {
+       imprimir("Hubo mundial de la FIFA en el año " + anhoMundial);
+       anhoMundial = anhoMundial + 4
+       }
+       
+       //Hay que tener cuidado con esta condicion llamada while, ya que tiene
+       //que salirse de el while dado que puede trabar nuestros equipos.
+
+       imprimir("fin");
+
+      
+
+
+</script>

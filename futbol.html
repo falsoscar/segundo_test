@@ -1,0 +1,65 @@
+<meta charset="UTF-8">
+
+<h1>PROGRAMA - CALCULAR PUNTOS DE UN EQUIPO DE FUTBOL</h1>
+
+<script>
+
+    function saltarlinea() {
+
+        document.write("<br><br><br>");
+        }
+
+    function imprimir(frase) {
+        
+        document.write(frase);
+        saltarlinea();
+        
+    }
+
+ //Cuando se solicita al usuario que informe algun dato en el promp nos retorna un tipo
+ //de variable de tipo String "texto"
+    var victorias = parseInt(prompt("Informe la cantidad de victorias"));
+    var empates = parseInt(prompt("Informe la cantidad de empates"));
+ //la funcion parseInt transforma nuestra variables de texto a numericas 
+ 
+ //parsetInt solo funciona cuando se quiere retornar un numero que tiene una variable de tipo 
+ //texto, si se quiere retornoar un texto a texto con esta funcion, nos salfra un error.
+
+ //Java intenta ayudarnos con algunas operaciones y cuando multiplicamos un texto a un 
+ //numero, el texto lo convierte a numero. sin embargo cuando sumamos un texto con un numero
+ //java nos lo concatena
+ //texto * numero = numero
+ //"10"* 2 = 20;
+ //texto sumado con numero = concatenado
+ //"10" + 2 = 1020;
+
+    //En la orden de prioridad de operaciones matematicas JavaScript sigue el orden de las gerarquias numericas.
+    var puntostotal = (victorias * 3) + empates;
+
+    imprimir("El total de puntos del equipo es: " + puntostotal)
+
+    //JavaScript es muy exigente al momento de usar parentesis
+
+ //Ahora vamos a comparar con la puntuacion anterior y compararemos si hay
+ //mejora o no.
+
+ //Para eso usaremos la condicional llamada if que significa si pero condicional
+ //En la condicion if no todas las opciones son verdaderas y solo nos dara la 
+ //condicion que se cumplio
+
+ //La condicion if nos regresa un valor llamado boolean esto quiere decir que 
+ //solo puede valer 1 o 0, en otras palabras que solo puede ser verdadero o falso.
+ 
+    if (puntostotal>28){
+    imprimir("El equipo esta mejor que el año pasado");
+    }
+
+    if (puntostotal <28){
+    imprimir("El equipo esta peor que el año pasado");
+    }
+
+    if (puntostotal == 28){
+    imprimir("El equipo esta igual que el año pasado");
+    }
+
+</script>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivinanzas</title>
+</head>
+<body>
+    <h1>JUEGO ADIVINANZA</h1>
+
+    <h3>Escoja un número del 1 al 10 y verifique si es el mismo que pensó el sistema</h3>
+<input type="text">
+<button>Verifique el número</button>
+
+<script>
+
+    var numeroPensado = Math.round(Math.random() * 10);
+    var input = document.querySelector("input");
+    var intentos = 3;
+    var contador = 1;
+    input.focus();
+    
+    function mostrarResultado(){
+
+            if(parseInt(input.value) == numeroPensado){
+                    alert("Usted acertó");
+                 
+                }
+            
+
+                else{
+                    alert("Usted erró")
+                }
+        
+
+                
+            input.value
+            input.focus();
+                
+            }
+
+    var button = document.querySelector ("button");
+    button.onclick = mostrarResultado;
+
+
+   
+</script>
+
+
+</body>
+</html>

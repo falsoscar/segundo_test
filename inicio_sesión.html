@@ -1,0 +1,73 @@
+<meta charset="UTF-8">
+<script>
+
+ /*Cambia el código anterior para que el usuario tenga 3 intentos de inicio de sesión. 
+
+ ponemos nuestras funcionees que ya conocemos, aunque en este ejercicio
+ no las usaremos, solo es para fines practicos.*/
+    function saltarlinea(){
+        document.write("<br");
+    }
+
+    function imprimir(frase){
+        document.write(frase);
+        saltarlinea
+    }
+
+     /* Inicialmente se encontraba en el codigo las variables inicio de sesion ingresado,
+     contraseña ingresada, pero dado que crearemos un while debemos pasar estas variables
+     en la zona de white.
+
+     Crearemos dos nuevas variables llamadas "var intentos y var contador" que nos permitiran 
+     aunebtar el numero de intentos a 3 y el contador servira para que nuestro codigo reconozca
+     cuantos intentos llevamos*/
+
+    var inicioDeSesionRegistrado = "alura";
+    var contrasenhaRegistrada = "alura321";
+    var intentos = 3
+     //var inicioDeSesionIngresado = prompt("Ingrese su usuario");
+     //var contrasenhaIngresada = prompt("Ingrese su contraseña");
+    var contador = 1
+
+     /*Creamos el while, recordando que debemos limitar el numero de veces que repetira el codigo
+     para no tener problemas en nuestra pagina, para eso usaremos "contador <= intentos". */
+    
+     while(contador <= intentos){
+
+     //aqui agregaremos las variables que anteriormente teniamos antes del while.
+        var inicioDeSesionIngresado = prompt("Ingrese su usuario");
+        var contrasenhaIngresada = prompt("Ingrese su contraseña");
+
+     /*Para cortar la aciion de repetir el comando white, se le agrega el comando "brear", para esto
+     pusimos la condicional if que significa que llevara una acción en especifico solo si se cumple
+     con las instrucciones que le especificamos al if. */
+        if( inicioDeSesionRegistrado == inicioDeSesionIngresado && contrasenhaRegistrada == contrasenhaIngresada ) {
+            alert("Bienvenido al sistema " + inicioDeSesionIngresado);
+            break;
+        } 
+
+     /*En caso que la instruccion en if no se cumpla, le daremos otra accion llamada "else" que significa "si no se cumple la condicion"
+     entonces no nos dara aceeso al sistema dado que es la instruccion que le damos por 
+     no escribir los datos correctos. */
+     
+        else {
+            alert("inicio de sesión inválido. Por fsvor intente de nuevo");
+        }
+        contador++;
+     /*Recordemos que "contador++" es lo mismo a "contador = contador + 1" y su funcion es aumentar en uno
+     el numero de intentos que llevamos en total para iniciar. */
+    } 
+    
+     /*Agregaremos una nueva condicionante para mandar un nuevo mensaje con la alerta "excedio el numero de intentos"
+     esta condicionante se llevara a cabo si alcanzamos el limite de intentos permitidos. */
+    
+        if (intentos == 3) {
+            alert("excedio el numero de intentos")
+        }
+             
+     /*Por ultimo usaremos la funcion imprimir unicamente para que nos arroje el texto FIN y saber que nuestro programa 
+     finalizo, no es necesario ponerlo en este ejercicio. */
+
+     imprimir("<big>FIN</big>");
+    
+</script>

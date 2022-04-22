@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /*En la prueba de estructura de datos, 
+        Felipe tenía la siguiente lista: 
+
+        var heroes = ["Superman", "Thor", "Batman", "Mujer Maravilla"];
+
+        El ejercicio pidió que mostrara un alert para cada ítem de la 
+         lista y lo implementó de la siguiente manera:
+
+         for( var i = 0; i < heroes .length; i++) {
+              alert(heroes[i]);
+        }
+
+     A pesar de creer que su código es correcto, obtuvo un 7/10 porque 
+     cometió un error. Su maestro dijo que mostraba todos los nombres 
+     excepto "Superman".
+
+ ¿Cuál es el problema con el código de Felipe? ¿Cómo puede cambiarlo 
+  para que muestre todos los nombres en la lista sin omitir ninguno?*/
+   
+   
+    var heroes = ["Superman", "Thor", "Batman", "Mujer Maravilla"];
+    
+    /* Hay que recordar que el codigo dentro de un arreglo empieza 
+    desde el indice 0 y va aumentando de indice a medida que aumenta
+    el numero de elementos en el arreglo, esto significa que superman 
+    cuenta como indice 0 = elemento 1 y asi sucesivamente, se tendran 
+    4 elementos pero su indice macximo son 3 */
+    for( var i = 0; i < heroes .length; i++) {
+        alert(heroes[i]);
+    }  
+   
+ </script>
+</body>
+</html>

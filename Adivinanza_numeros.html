@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>JUEGO DE ADIVINANZA</h1>
+
+    <script>
+        
+        function saltarlinea() {
+            document.write("<br><br><br>");
+        }
+
+        function imprimir(frase) {
+            document.write(frase);
+            saltarlinea
+        }
+
+        function sorteo() {
+            return Math.round(Math.random()*10);
+        }
+
+        var numeroPensado = sorteo(10);
+        var numeroLanzado = parseInt(prompt("ingrese un número entre 0-10"));
+
+        if (numeroPensado == numeroLanzado){
+            imprimir("Usted acertó");
+        }
+
+        if (numeroPensado > numeroLanzado){
+            imprimir("Usted erró, el numero pensado era mayor que su numero");
+        }
+    
+        if (numeroPensado < numeroLanzado){
+            imprimir("Usted erró, el numero pensado era menor que su numero");
+        }
+
+    </script>
+</body>
+</html>
